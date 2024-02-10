@@ -1,3 +1,5 @@
+// var _ = require('underscore');
+
 var Messages = {
 
 
@@ -9,6 +11,7 @@ var Messages = {
 
   add: function(message, callback = ()=>{}) {
     Messages._data[message.message_id] = message;
+    console.log(Messages._data);
     callback(Messages.items());
   },
 
@@ -32,5 +35,5 @@ var Messages = {
     message.roomname = message.roomname || '';
     return message;
   }
-  
+
 };

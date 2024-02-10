@@ -1,3 +1,4 @@
+// var _ = require('underscore');
 var Rooms = {
 
 
@@ -38,5 +39,5 @@ var Rooms = {
       callback(Rooms.items());
     }
   }
-  
+
 };

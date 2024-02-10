@@ -9,7 +9,7 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+
 
     var message = {
       username: App.username,
@@ -17,11 +17,15 @@ var FormView = {
       roomname: Rooms.selected || 'lobby'
     };
 
-    Parse.create(message, (data) => {
-      _.extend(message, data[0]);
-      Messages.add(message, MessagesView.render);
+
+    Parse.create(message, () => {
+      // removed data from parameter
+      // _.extend(message, data[0]);
+      // Messages.add(message, MessagesView.render);
+      App.fetch(App.stopSpinner)
     });
       },
+
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
